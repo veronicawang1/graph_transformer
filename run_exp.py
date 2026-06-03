@@ -157,6 +157,9 @@ def build_gcn(args,tasker):
 			return egcn_h.EGCN(gcn_args, activation = torch.nn.RReLU(), device = args.device, skipfeats=True)
 		elif args.model == 'egcn_o':
 			return egcn_o.EGCN(gcn_args, activation = torch.nn.RReLU(), device = args.device)
+		elif args.model == 'egcn_t':
+			import egcn_t
+			return egcn_t.EGCN(gcn_args, activation = torch.nn.RReLU(), device = args.device)
 		else:
 			raise NotImplementedError('need to finish modifying the models')
 

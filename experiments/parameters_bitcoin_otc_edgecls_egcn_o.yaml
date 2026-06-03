@@ -1,4 +1,4 @@
-data: bitcoinalpha  # bitcoinalpha bitcoinotc
+data: bitcoinotc  # bitcoinalpha bitcoinotc
 
 bitcoinotc_args:
   folder: ./data/
@@ -36,7 +36,7 @@ early_stop_patience: 100
 
 eval_after_epochs: 5
 adj_mat_time_window: 1
-num_hist_steps: 10 # number of previous steps used for prediction
+num_hist_steps: 2
 num_hist_steps_min: 3 # only used if num_hist_steps: None
 num_hist_steps_max: 10 # only used if num_hist_steps: None
 

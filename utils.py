@@ -84,7 +84,7 @@ class Namespace(object):
         self.__dict__.update(adict)
 
 def set_seeds(rank):
-    seed = int(time.time())+rank
+    seed = int(os.environ.get('SEED', time.time())) + rank
     np.random.seed(seed)
     random.seed(seed)
     torch.manual_seed(seed)
@@ -124,6 +124,17 @@ def load_data_from_tar(file, tar_archive, replace_unknow=False, starting_line=1,
     data = tensor_const(data)
     #print (file,'data size', data.size())
     return data
+    
+def load_data_from_file(file, replace_unknow=False, starting_line=1, sep=',', type_fn=float, tensor_const=torch.DoubleTensor):
+    with open(file, 'r') as f:
+        lines = f.read()
+    if replace_unknow:
+        lines = lines.replace('unknow', '-1')
+        lines = lines.replace('-1n', '-1')
+    lines = lines.splitlines()
+    data = [[type_fn(r) for r in row.split(sep)] for row in lines[starting_line:]]
+    data = tensor_const(data)
+    return data
 
 def create_parser():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)
@@ -133,7 +144,7 @@ def create_parser():
 def parse_args(parser):
     args = parser.parse_args()
     if args.config_file:
-        data = yaml.load(args.config_file)
+        data = yaml.load(args.config_file, Loader=yaml.FullLoader)
         delattr(args, 'config_file')
         # print(data)
         arg_dict = args.__dict__

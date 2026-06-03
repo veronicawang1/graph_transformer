@@ -1,0 +1,6 @@
+{
+  "model": "xgboost",
+  "auc": 0.9114,
+  "weighted_f1": 0.9723,
+  "illicit_f1": 0.7538
+}

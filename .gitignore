@@ -1,240 +1,50 @@
-# ======================
-# PYTHON
-# ======================
+# python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-*$py.class
-.Python
-*.egg
 *.egg-info/
-.eggs/
-.installed.cfg
+.ipynb_checkpoints/
 
-# Virtual environments
-.env
-.envrc
-.venv
+# virtual environments
 venv/
+.venv/
 env/
-ENV/
-env.bak/
-venv.bak/
 
-# Packaging / build artifacts
-build/
-dist/
-develop-eggs/
-downloads/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-share/python-wheels/
-var/
-wheels/
-MANIFEST
+# run logs
+log/
+#
 
-# Dependency managers
-.pdm-python
-.pdm-build/
-# Pipfile.lock
-# poetry.lock
-# poetry.toml
-# pdm.lock
-# pdm.toml
-# uv.lock
-# pixi.lock
+# weights & experiment tracking
+wandb/
 
-# ======================
-# DATA / MODELS
-# ======================
-# Datasets
-data/
-*.csv
+# checkpoints
 *.pt
+*.pth
+*.ckpt
 *.pkl
 *.npy
 *.npz
 
-# Model checkpoints
-checkpoints/
-*.pth
-*.ckpt
-*.h5
-*.pb
+# archives
+*.zip
+*.tar
+*.tar.gz
+*.gz
 
-# ======================
-# JUPYTER / IPYTHON
-# ======================
-.ipynb_checkpoints
-.ipynb_checkpoints/
-*.ipynb
+# datasets
+data/*
+!data/sbm_50t_1000n_adj.csv
+!data/soc-sign-bitcoinotc.csv
+!data/soc-sign-bitcoinalpha.csv
 
-profile_default/
-ipython_config.py
+# secrets
+.netrc
+*.pem
+*.key
+gcp_key*
+.env
 
-# ======================
-# TESTING / COVERAGE
-# ======================
-.tox/
-.nox/
-.cache
-.coverage
-.coverage.*
-.pytest_cache/
-.hypothesis/
-htmlcov/
-nosetests.xml
-coverage.xml
-*.cover
-*.py.cover
-
-# ======================
-# TYPE CHECKERS / LINTERS
-# ======================
-.mypy_cache/
-.pyre/
-.pytype/
-.ruff_cache/
-.dmypy.json
-dmypy.json
-
-# ======================
-# EXPERIMENTS / LOGS
-# ======================
-wandb/
-runs/
-logs/
-outputs/
-
-*.log
-*.out
-pip-log.txt
-pip-delete-this-directory.txt
-
-# ======================
-# NOTEBOOK / APP TOOLS
-# ======================
-.marimo/
-__marimo__/
-marimo/_static/
-marimo/_lsp/
-
-.streamlit/secrets.toml
-
-# ======================
-# WEB FRAMEWORKS
-# ======================
-# Django
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask
-instance/
-.webassets-cache
-
-# Scrapy
-.scrapy
-
-# ======================
-# TASK QUEUES / DATABASES
-# ======================
-# Celery
-celerybeat-schedule
-celerybeat.pid
-
-# Redis
-*.rdb
-*.aof
-*.pid
-
-# RabbitMQ
-mnesia/
-rabbitmq/
-rabbitmq-data/
-
-# ActiveMQ
-activemq-data/
-
-# ======================
-# DOCUMENTATION
-# ======================
-docs/_build/
-/site
-
-# ======================
-# LATEX / PAPERS
-# ======================
-*.aux
-*.toc
-*.bbl
-*.blg
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-*.pdf
-
-# ======================
-# C / CYTHON / COMPILED
-# ======================
-*.so
-cython_debug/
-
-# PyInstaller
-*.manifest
-*.spec
-
-# SageMath
-*.sage.py
-
-# ======================
-# CLOUD / CREDENTIALS
-# ======================
-*.json
-service-account*.json
-gcp-key*.json
-.gcp/
-credentials/
-
-# ======================
-# EDITORS / IDEs
-# ======================
-# VS Code
-.vscode/
-*.code-workspace
-tempCodeRunnerFile.py
-
-# PyCharm / JetBrains
-# .idea/
-
-# Spyder
-.spyderproject
-.spyproject
-
-# Rope
-.ropeproject
-
-# ======================
-# OS FILES
-# ======================
+# os/editor
 .DS_Store
-.DS_Store?
 Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# ======================
-# MISC
-# ======================
-# Abstra
-.abstra/
-
-# Pixi
-.pixi
-
-# PEP 582
-__pypackages__/
+.vscode/
+.idea/
